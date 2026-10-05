@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "appId": "53dd0be9-5fb3-4b76-b682-739d16e92c00",
+  "appDisplayName": "Internal Order Supply App",
+  "region": "prod",
+  "environmentId": "13da027d-c9ca-e39e-8615-5a3453de3819",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3000",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "8ffc3f30-2b16-4b32-89d6-ab5c2267d4f3": {
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "displayName": "Office 365 Outlook"
+    },
+    "50c07ed1-e077-4e49-9b19-ae17b01faf0c": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_logicflows",
+      "displayName": "Logic flows",
+      "dataSources": [
+        "ordersupply_sendnotification"
+      ],
+      "workflowDetails": {
+        "workflowEntityId": "32bf5651-8b5a-f111-bec7-0022480af57b",
+        "workflowDisplayName": "Order Supply - Send Notification",
+        "workflowName": "8b37eb09-a45f-efcc-93c4-150e3b07d657",
+        "dependencies": {
+          "shared_office365": "8ffc3f30-2b16-4b32-89d6-ab5c2267d4f3"
+        }
+      }
+    }
+  },
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "catalogitems": {
+          "entitySetName": "pv_catalogitems",
+          "logicalName": "pv_catalogitem",
+          "isHidden": false
+        },
+        "internalorders": {
+          "entitySetName": "pv_internalorders",
+          "logicalName": "pv_internalorder",
+          "isHidden": false
+        },
+        "users": {
+          "entitySetName": "systemusers",
+          "logicalName": "systemuser",
+          "isHidden": false
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}
